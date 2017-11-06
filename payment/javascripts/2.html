@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取当前时间</title>
+</head>
+<body>
+    <div>
+        <span>现在的时间是</span>
+        <input type="text" id="localtime">
+        <div>
+            <span>距离今年最后一天</span>
+            <span id="day"></span>
+            <span>天</span>
+            <span id="hours"></span>
+            <span>时</span>
+            <span id="month"></span>
+            <span>分</span>
+            <span id="mis"></span>
+            <span>秒</span>
+        </div>
+    </div>
+    <script>
+     var lastdate =new Date(2017,12,31,23,59,999);
+     var day=document.getElementById("day"),
+         hours=document.getElementById("hours"),
+         month =document.getElementById("month"),
+         mis =document.getElementById("mis");
+    var localtime =document.getElementById("localtime");
+    setInterval(function () {
+        var newtime1 =new Date().toLocaleString();
+        localtime.value =newtime1;
+        var newtime =new Date();
+        var difference =lastdate-newtime;
+        day.textContent =Math.floor(difference/1000/60/60/24);
+        hours.textContent =Math.floor(difference/1000/60/60%24);
+        month.textContent =Math.floor(difference/1000/60%60);
+        mis.textContent =Math.floor(difference/1000%60);
+    },1000);
+</script>
+</body>
+</html>

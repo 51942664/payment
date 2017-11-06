@@ -1,0 +1,308 @@
+@charset "utf-8";
+/**
+ * 功能：索引页样式
+**/
+/*****************************************/
+/* 样式初始化部分 */
+/*****************************************/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+html,body,ul,ol,p,h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+body {
+    background-color: #eee;
+    font: 16px/1.5 sans-serif,"微软雅黑";
+    color: #333;
+    overflow: hidden;
+}
+input,select,button,textarea {
+    padding: 6px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    outline: none;
+    font: 18px sans-serif,"微软雅黑";
+}
+input,select,textarea {
+    transition: all 0.15s;
+}
+input:focus,select:focus,textarea:focus {
+    border-color: #0fd43d;
+    box-shadow: 0 0 10px rgba(15, 212, 61, 0.8);
+}
+/*****************************************/
+/* 样式元件 */
+/*****************************************/
+/* block */
+.block,page {
+    display: block;
+}
+/* 布局 */
+.mt-5 {
+    margin-top: 5px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mt-40 {
+    margin-top: 40px;
+}
+/* 字体 */
+.fz-36 {
+    font-size: 36px;
+}
+/* 按钮 */
+.btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(30,30,30,0.15);
+}
+.btn:active {
+    box-shadow: none;
+}
+.btn.default {
+    background-color: #0cc637;
+    color: #fff;
+}
+.btn.payBtn {
+    background-color: #fc8c1d;
+    color: #fff;
+}
+/* 收款人 */
+.payee {
+    padding: 0 1px;
+    color: #0cc637;
+    display: inline-block;
+}
+
+/* 基本列表样式 */
+.base-list {
+    width: 100%;
+    background-color: #fff;
+}
+.base-list li {
+    padding: 6px;
+    border-bottom: 1px solid #cdcdcd;
+    position: relative;
+    cursor: pointer;
+}
+.base-list li i[data-arrow="right"] {
+    width: 24px; height: 24px;
+    font: normal 24px/1 cursive;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translate(0, -50%);
+    color: #aaa;
+}
+.base-list li img, .base-list li span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.base-list li img {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+}
+.base-list li span {
+    margin-left: 10px;
+}
+/* 控件显示容器 */
+component {
+    /*background-color: rgba(102, 102, 102, 0.5);*/
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+}
+/* 密码组件主容器 */
+component .pwdComponet {
+    width: 100%; height: 100%;
+}
+/* 密码组件--遮罩层 */
+component .masklaer {
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 0;
+}
+/* 密码组件--付款信息区域 */
+component .payInfo {
+    height: calc(100% - 200px);
+    z-index: 1;
+    position: relative;
+}
+/* 密码组件--付款信息面板 */
+component .payInfo .payInfo-panel {
+    width: 86%; height: 220px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 密码组件--付款信息面板--标题 */
+.payInfo-panel h3 {
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 36px;
+    position: relative;
+}
+.payInfo-panel h3 i {
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    font: normal 24px sans-serif;
+    color: #aaa;
+    cursor: pointer;
+}
+.payInfo-panel h3 span {
+    font-weight: normal;
+    font-size: 1rem;
+}
+.payInfo-panel div {
+    text-align: center;
+}
+/* 密码框区域 */
+#pwdInput {
+    width: 218px; height: 32px;
+    margin: 2px auto 0;
+}
+#pwdInput .error {
+    height: 24px;
+    color: #ef5858;
+}
+/* 密码框 */
+#pwdInput .paypwdbox {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    overflow: hidden
+}
+#pwdInput .paypwdbox > div {
+    width: 36px; height: 36px;
+    border-right: 1px solid #999;
+    text-align: center;
+    float: left;
+}
+#pwdInput .paypwdbox > div:last-child {
+    border-right: 0;
+}
+/* “密码值” */
+#pwdInput .paypwdbox > div > i {
+    width: 16px; height: 16px;
+    background-color: #333;
+    border-radius: 50%;
+    display: block;
+    margin-left: 9px;
+    margin-top: 9px;
+}
+/* 密码组件--数字键盘区域 */
+component .numKeyboard {
+    height: 200px;
+    background-color: #eee;
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+component .numKeyboard > div {
+    width: 33.33333333%; height: 25%;
+    background-color: #fff;
+    border-right: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    text-align: center;
+    font: lighter 2rem/50px arial;
+    float: left;
+    cursor: pointer;
+}
+component .numKeyboard > div:nth-child(3n) {
+    border-right: none;
+}
+component .numKeyboard > div:empty {
+    background-color: transparent;
+    cursor: none;
+}
+
+/* header和footer */
+header,footer {
+    width: 100%; height: 40px;
+    background-color: #535353;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+footer {
+    color: #ddd;
+}
+
+/*****************************************/
+/* 详细设置 */
+/*****************************************/
+html,body,main,page {
+    width: 100%; height: 100%;
+}
+main {
+    /* 由于手机端的body标签不支持此属性，所以设置在body的子元素上 */
+    overflow: hidden;
+}
+page {
+    background-color: #fff;
+    position: absolute;
+    transition: left 0.6s;
+}
+page:nth-of-type(1) {
+    background-color: #eee;
+}
+page:nth-of-type(1) div.content {
+    padding: 0;
+}
+page:nth-of-type(2),page:nth-of-type(3) {
+    left: 100%;
+}
+
+page div.content {
+    height: calc(100% - 80px);
+    padding: 12px;
+    overflow-y: auto;
+}
+page:nth-of-type(3) div.content{
+    text-align: center;
+}
+page:nth-of-type(3) div.content .accessfore{
+    font-size: 1.6em;
+    color: #0cc637;
+}
+.content>p{
+
+}
+header {
+    position: relative;
+}
+header > back {
+    position: absolute;
+    left: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

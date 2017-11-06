@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text">
+    <button type="button" id="tihuan">刷新</button>
+    <p id="click"></p>
+<script>
+    var click = document.getElementById("click");
+    var str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    var tihuan = document.getElementById("tihuan");
+    tihuan.onclick =function () {
+        shird(5);
+    };
+
+    function shird(num) {
+        var str1="";
+        for(var i=0;i<num;i++){
+            //求0~61之间的随机数
+            var idx =Math.floor(Math.random()*str.length);
+            str1 += str[idx];
+//            str1 += charAt(idx);
+
+        }
+        click.textContent = str1;
+    }
+</script>
+</body>
+</html>

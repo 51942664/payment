@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+<main>
+    <page data-page="1">
+        <header>好友列表</header>
+        <div class="content">
+            <ul id="friend-list" class="base-list"></ul>
+        </div>
+        <footer>&copy;版权声明</footer>
+    </page>
+    <!--第二页-->
+    <page data-page="2">
+        <header>
+            <back>返回</back>
+            <span>支付信息</span>
+        </header>
+        <div class="content">
+            <p>您将向<span id="payee_1" class="payee"></span>支付:</p>
+            <p class="mt-10">
+                <label>￥</label>
+                <input type="number" id="numPayMoney">
+            </p>
+            <p class="mt-20">
+                <button type="button" id="payMoney" class="btn default">支付</button>
+            </p>
+        </div>
+        <footer>&copy;版权声明</footer>
+    </page>
+    <!--第三页-->
+    <page data-page="3">
+        <header>
+            <back>返回</back>
+            <span>支付信息</span>
+        </header>
+        <div class="content">
+            <p class="accessfore">转账成功</p>
+            <p>您已向<span id="payee_2" class="payee"></span>转账</p>
+            <p>￥<span id="payMoneyTotal"></span></p>
+        </div>
+        <footer>&copy;版权声明</footer>
+    </page>
+    <!--组件-->
+    <component id="showComponet"></component>
+</main>
+
+<script src="data/friend-dat.js"></script>
+<script src="javascripts/index.js"></script>
+</body>
+</html>
